@@ -128,20 +128,19 @@ namespace PracticeProblemsLINQ
         public static string RunBonusProblem1(string word)
         {
             //code
-            // I remember Mike
-
-            Console.WriteLine("Please enter string");
-            string uncompressedString = word;
+                      
+            word = word.ToUpper();
+            string uncompressedString = SortString(word);
+            
             string compressedString = "";
             int letterCounter = 1;
-
 
             for (int i = 0; i < uncompressedString.Length; i++)
             {
                 if (i == uncompressedString.Length - 1)
                 {
-                    compressedString += letterCounter;
                     compressedString += uncompressedString[i];
+                    compressedString += letterCounter;
                 }
                 else if (uncompressedString[i] == uncompressedString[i + 1])
                 {
@@ -149,15 +148,23 @@ namespace PracticeProblemsLINQ
                 }
                 else
                 {
-                    compressedString += letterCounter;
                     compressedString += uncompressedString[i];
+                    compressedString += letterCounter;
                     letterCounter = 1;
                 }
             }
-            compressedString.OrderBy(c => c);
+            
             //return
             return compressedString;
         }
+
+        public static string SortString(string s)
+        {
+            char[] arr = s.ToCharArray();
+            Array.Sort(arr);
+            return new string(arr);
+        }
+
         #endregion
     }
 }

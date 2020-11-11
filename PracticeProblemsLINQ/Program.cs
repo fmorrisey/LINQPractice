@@ -75,7 +75,7 @@ namespace PracticeProblemsLINQ
 
             //Bonus Problem 1
             //terrill
-            string letters = "aaabbbcccdddd";
+            string letters = "terrill";
             string stringReturn = LinqProblems.RunBonusProblem1(letters);
             Console.WriteLine(stringReturn);
             Console.ReadLine();
