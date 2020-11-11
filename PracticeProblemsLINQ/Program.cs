@@ -60,6 +60,7 @@ namespace PracticeProblemsLINQ
                 Console.WriteLine(customer.Id + customer.FirstName + customer.LastName);
             }
             Console.ReadLine();
+
             /*
             //**************************************************************************
             
