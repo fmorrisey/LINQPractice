@@ -44,6 +44,7 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem3(List<Customer> customers)
         {
             //code
+            // Added additional code to turn this into a search function for the user.
 
             bool askAgain = true;
             
@@ -85,12 +86,10 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers, int uID)
         {
             //code
-
+            Console.WriteLine("Enter New First Name");
             string newFirstName = Console.ReadLine();
-            Console.WriteLine("New First Name");
-            
 
-            Console.WriteLine("New Second Name");
+            Console.WriteLine("Enter New Second Name");
             string newLastName = Console.ReadLine();
 
             // solution found here: https://stackoverflow.com/questions/30055651/how-to-update-value-in-a-list-using-linq
@@ -114,6 +113,8 @@ namespace PracticeProblemsLINQ
         {
             //code
 
+
+
             //return
             return default;
 
@@ -123,13 +124,39 @@ namespace PracticeProblemsLINQ
         #region Bonus Problem 1
         //(5 points) Bonus Problem 1
         //Write a method that takes in a string of letters(i.e. “Terrill”) 
-        //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
+        //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1" result 1t1e2r1i2l)
         public static string RunBonusProblem1(string word)
         {
             //code
+            // I remember Mike
 
+            Console.WriteLine("Please enter string");
+            string uncompressedString = word;
+            string compressedString = "";
+            int letterCounter = 1;
+
+
+            for (int i = 0; i < uncompressedString.Length; i++)
+            {
+                if (i == uncompressedString.Length - 1)
+                {
+                    compressedString += letterCounter;
+                    compressedString += uncompressedString[i];
+                }
+                else if (uncompressedString[i] == uncompressedString[i + 1])
+                {
+                    letterCounter++;
+                }
+                else
+                {
+                    compressedString += letterCounter;
+                    compressedString += uncompressedString[i];
+                    letterCounter = 1;
+                }
+            }
+            compressedString.OrderBy(c => c);
             //return
-            return null;
+            return compressedString;
         }
         #endregion
     }

@@ -10,6 +10,7 @@ namespace PracticeProblemsLINQ
     {
         static void Main(string[] args)
         {
+            /*
             //Problem 1
             List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
             var wordsReturn = LinqProblems.RunProblem1(words);
@@ -18,7 +19,7 @@ namespace PracticeProblemsLINQ
             {
                 Console.WriteLine(word);
             }
-            Console.ReadLine();
+           
 
             //**************************************************************************
 
@@ -29,7 +30,7 @@ namespace PracticeProblemsLINQ
             {
                 Console.WriteLine(name);
             }
-            Console.ReadLine();
+            
 
             //**************************************************************************
 
@@ -69,12 +70,15 @@ namespace PracticeProblemsLINQ
                 "73,88,83,99,64",
                 "98,100,66,74,55"
             };
-
+            */
             //**************************************************************************
-      
-            //Bonus Problem 1
-            string letters = "terrill";
 
+            //Bonus Problem 1
+            //terrill
+            string letters = "aaabbbcccdddd";
+            string stringReturn = LinqProblems.RunBonusProblem1(letters);
+            Console.WriteLine(stringReturn);
+            Console.ReadLine();
         }
     }
 }
