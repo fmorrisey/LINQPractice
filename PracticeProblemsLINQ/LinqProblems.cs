@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -112,18 +113,29 @@ namespace PracticeProblemsLINQ
         public static double RunProblem5(List<string> classGrades)
         {
             //code
-
-            var studentGrades = StringParse(classGrades);
-            var studentNumericalGrades = IntergerParse(studentGrades);
-            studentNumericalGrades = studentNumericalGrades;
-
+           
+            var studentGrades = NumericalGradeParser(classGrades);
+            var returnAfterDrop = DropMin(studentGrades);
+            var returnAfterStudentAvg = Average(returnAfterDrop); 
 
             //return
             return default;
 
         }
 
+        public static List<int[]> DropMin(List<int[]> classNumGrades)
+        {   // I gave up
+            int sum;
+            //foreach (var sg in classNumGrades)
+            //{
+            //    sum = sg.Min();
+            //    sum = sum
+            //    classNumGrades.Remove(sg.removsum);
+            //}
 
+            return classNumGrades;
+        }
+        
         public static List<int[]> NumericalGradeParser(List<string> classGrade)
         {
             List<int[]> classGradeNumericals = new List<int[]>();
@@ -131,10 +143,20 @@ namespace PracticeProblemsLINQ
             foreach (var studentGrades in classGrade)
             {
                 classGradeNumericals.Add(studentGrades.Split(',').Select(int.Parse).ToArray());
+                
             }
 
             return classGradeNumericals;
 
+        }
+
+        public static List<int> Average(List<int[]> classNumGrades)
+        {
+            foreach (var studentGrade in classNumGrades)
+            {
+                studentGrade.Average();
+            }
+            return null;
         }
 
 

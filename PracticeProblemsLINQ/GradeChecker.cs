@@ -22,7 +22,6 @@ namespace PracticeProblemsLINQ
             }
         }
 
-
         public static bool LessThanSeventy(int grade)
         {
             return grade <= 70;

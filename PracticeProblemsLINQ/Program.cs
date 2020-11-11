@@ -8,10 +8,10 @@ namespace PracticeProblemsLINQ
 {
     class Program
     {
-        classGradeNumericals.Add(studentGrades.Split(',').Select(int.Parse).ToArray());
+        
         static void Main(string[] args)
         {
-            /*
+            
             //Problem 1
             List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
             var wordsReturn = LinqProblems.RunProblem1(words);
@@ -60,7 +60,7 @@ namespace PracticeProblemsLINQ
                 Console.WriteLine(customer.Id + customer.FirstName + customer.LastName);
             }
             Console.ReadLine();
-            */
+            /*
             //**************************************************************************
             
             //Problem 5
@@ -71,17 +71,25 @@ namespace PracticeProblemsLINQ
                 "73,88,83,99,64",
                 "98,100,66,74,55"
             };
-            LinqProblems.RunProblem5(classGrades);
-            Console.ReadLine();
+            var NumGrades = LinqProblems.NumericalGradeParser(classGrades);
+
+            IEnumerable<int> result = GradeChecker.CheckGrades(NumGrades, GradeChecker.LessThanSeventy);
+
+            IEnumerable<int> result1 = GradeChecker.CheckGrades(NumGrades, GradeChecker.GreaterThanSeventy);
+            foreach (int grade in result)
+            {
+                Console.WriteLine(grade);
+            }
+            */
+
             //**************************************************************************
-            /*
+            
             //Bonus Problem 1
             //terrill
             string letters = "terrill";
-            string stringReturn = LinqProblems.RunBonusProblem1(letters);
-            Console.WriteLine(stringReturn);
+            Console.WriteLine(LinqProblems.RunBonusProblem1(letters));
             Console.ReadLine();
-            */
+            
         }
     }
 }
