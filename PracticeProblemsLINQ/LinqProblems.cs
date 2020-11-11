@@ -10,15 +10,15 @@ namespace PracticeProblemsLINQ
     {
         //Weighted project points: /10
         //Project points: /25
-       
+
         #region Problem 1 
         //(5 points) Problem 1
         //Using LINQ, write a method that takes in a list of strings and returns all words that contain the substring “th” from a list.
         public static List<string> RunProblem1(List<string> words)
         {
             //code
-             List<string> wordSearch = words.FindAll(w => w.Contains("th"));
-            
+            List<string> wordSearch = words.FindAll(w => w.Contains("th"));
+
             //return
             return wordSearch;
 
@@ -47,7 +47,7 @@ namespace PracticeProblemsLINQ
             // Added additional code to turn this into a search function for the user.
 
             bool askAgain = true;
-            
+
             do
             {
                 Console.WriteLine("Search Customer by First Name: ");
@@ -112,8 +112,10 @@ namespace PracticeProblemsLINQ
         public static double RunProblem5(List<string> classGrades)
         {
             //code
-            
-            
+
+            var studentGrades = StringParse(classGrades);
+            var studentNumericalGrades = IntergerParse(studentGrades);
+            studentNumericalGrades = studentNumericalGrades;
 
 
             //return
@@ -122,14 +124,37 @@ namespace PracticeProblemsLINQ
         }
 
 
+        public static List<int[]> NumericalGradeParser(List<string> classGrade)
+        {
+            List<int[]> classGradeNumericals = new List<int[]>();
+
+            foreach (var studentGrades in classGrade)
+            {
+                classGradeNumericals.Add(studentGrades.Split(',').Select(int.Parse).ToArray());
+            }
+
+            return classGradeNumericals;
+
+        }
+
+
+        public static List<int[]> IntergerParse(List<string[]> classGradeValues)
+        {
+            List<int[]> classGradeNumericals = new List<int[]>();
+            
+            foreach (var grade in classGradeValues)
+            {
+                classGradeNumericals.Add(grade.Select(int.Parse).ToArray());
+            }
+
+            return classGradeNumericals;
+        }
+
+
         public static List<string[]> StringParse(List<string> classGrade)
         {
             List<string[]> gradeParse = new List<string[]>();
-            List<int[]> gradeValues = new List<int[]>();
-            int holder;
-            decimal average;
-            
-            
+           
             foreach (var studentGrades in classGrade)
             {
                 gradeParse.Add(studentGrades.Split(','));

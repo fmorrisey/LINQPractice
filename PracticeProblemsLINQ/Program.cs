@@ -8,6 +8,7 @@ namespace PracticeProblemsLINQ
 {
     class Program
     {
+        classGradeNumericals.Add(studentGrades.Split(',').Select(int.Parse).ToArray());
         static void Main(string[] args)
         {
             /*
@@ -70,7 +71,7 @@ namespace PracticeProblemsLINQ
                 "73,88,83,99,64",
                 "98,100,66,74,55"
             };
-            LinqProblems.StringParse(classGrades);
+            LinqProblems.RunProblem5(classGrades);
             Console.ReadLine();
             //**************************************************************************
             /*
