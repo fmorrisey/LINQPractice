@@ -112,13 +112,32 @@ namespace PracticeProblemsLINQ
         public static double RunProblem5(List<string> classGrades)
         {
             //code
-
+            
+            
 
 
             //return
             return default;
 
         }
+
+
+        public static List<string[]> StringParse(List<string> classGrade)
+        {
+            List<string[]> gradeParse = new List<string[]>();
+            List<int[]> gradeValues = new List<int[]>();
+            int holder;
+            decimal average;
+            
+            
+            foreach (var studentGrades in classGrade)
+            {
+                gradeParse.Add(studentGrades.Split(','));
+            }
+
+            return gradeParse;
+        }
+
         #endregion
 
         #region Bonus Problem 1
