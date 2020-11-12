@@ -61,7 +61,7 @@ namespace PracticeProblemsLINQ
             }
             Console.ReadLine();
 
-            /*
+            
             //**************************************************************************
             
             //Problem 5
@@ -72,16 +72,10 @@ namespace PracticeProblemsLINQ
                 "73,88,83,99,64",
                 "98,100,66,74,55"
             };
-            var NumGrades = LinqProblems.NumericalGradeParser(classGrades);
+            Console.WriteLine(LinqProblems.RunProblem5Solution(classGrades));
 
-            IEnumerable<int> result = GradeChecker.CheckGrades(NumGrades, GradeChecker.LessThanSeventy);
+            //var NumGrades = LinqProblems.NumericalGradeParser(classGrades);
 
-            IEnumerable<int> result1 = GradeChecker.CheckGrades(NumGrades, GradeChecker.GreaterThanSeventy);
-            foreach (int grade in result)
-            {
-                Console.WriteLine(grade);
-            }
-            */
 
             //**************************************************************************
             

@@ -232,5 +232,45 @@ namespace PracticeProblemsLINQ
         }
 
         #endregion
+
+
+        public static double RunProblem5Solution(List<string> classGrades)
+
+        {
+
+            //code 
+
+            double cumulativeTotal = 0;
+
+            foreach (string s in classGrades)
+
+            {
+
+                string[] grades = s.Split(','); // Split each string by comma before converting to ints 
+
+                var gradesInt = grades.Select(g => Int32.Parse(g)).ToList(); // select each string in array, parse to int, add to new list 
+
+                gradesInt.Remove(gradesInt.Min()); // remove lowest int from array 
+
+                cumulativeTotal += gradesInt.Average(); // add the average of the shrunk array to a cumulative total 
+
+
+            }
+
+            var finalTotal = cumulativeTotal / classGrades.Count; // find average of all averaged grades divided by total strings in original list 
+
+
+
+
+            //return 
+
+            return finalTotal;
+
+
+
+
+        }
+
+
     }
 }
